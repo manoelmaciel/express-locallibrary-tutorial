@@ -1,0 +1,106 @@
+16/02/2021 - 04:15 
+
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn$ git clone https://github.com/manoelmaciel/express-locallibrary-tutorial.git
+Cloning into 'express-locallibrary-tutorial'...
+remote: Enumerating objects: 662, done.
+remote: Total 662 (delta 0), reused 0 (delta 0), pack-reused 662
+Receiving objects: 100% (662/662), 334.41 KiB | 615.00 KiB/s, done.
+Resolving deltas: 100% (385/385), done.
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn$ ls
+express-locallibrary-tutorial
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn$ cd express-locallibrary-tutorial/
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ ls
+app.js              controllers  package.json       public     views
+bin                 LICENSE      package-lock.json  README.md
+CODE_OF_CONDUCT.md  models       populatedb.js      routes
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ npm install
+
+> nodemon@2.0.4 postinstall /home/manoel/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 288 packages from 251 contributors and audited 291 packages in 11.054s
+found 10 vulnerabilities (7 low, 3 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ npm audit fix
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+updated 2 packages in 4.078s
+fixed 9 of 10 vulnerabilities in 291 scanned packages
+  1 package update for 1 vulnerability involved breaking changes
+  (use `npm audit fix --force` to install breaking changes; or refer to `npm audit` for steps to fix these manually)
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ npm audit fix --force
+npm WARN using --force I sure hope you know what you are doing.
++ pug@3.0.0
+added 10 packages from 10 contributors, removed 33 packages and updated 22 packages in 12.428s
+fixed 1 of 1 vulnerability in 291 scanned packages
+  1 package update for 1 vulnerability involved breaking changes
+  (installed due to `--force` option)
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ ls
+app.js              controllers  node_modules       populatedb.js  routes
+bin                 LICENSE      package.json       public         views
+CODE_OF_CONDUCT.md  models       package-lock.json  README.md
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ DEBUG=express-locallibrary-tutorial:* npm run devstart
+
+> express-locallibrary-tutorial@0.0.0 devstart /home/manoel/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial
+> nodemon ./bin/www
+
+[nodemon] 2.0.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node ./bin/www`
+  express-locallibrary-tutorial:server Listening on port 3000 +0ms
+GET /index.html 404 264.801 ms - -
+GET /stylesheets/style.css 200 4.380 ms - 76
+GET /favicon.ico 404 54.801 ms - -
+GET /catalog/books 200 592.258 ms - -
+GET /stylesheets/style.css 304 1.139 ms - -
+GET /catalog/authors 200 571.783 ms - -
+GET /stylesheets/style.css 304 1.424 ms - -
+GET /catalog/genres 200 210.213 ms - -
+GET /stylesheets/style.css 304 0.690 ms - -
+GET /catalog/bookinstances 200 731.704 ms - -
+GET /stylesheets/style.css 304 0.593 ms - -
+GET /catalog/author/create 200 52.559 ms - -
+GET /stylesheets/style.css 304 1.981 ms - -
+GET /catalog/genre/create 200 48.484 ms - -
+GET /stylesheets/style.css 304 0.523 ms - -
+GET /catalog/book/create 200 524.786 ms - -
+GET /stylesheets/style.css 304 0.771 ms - -
+GET /catalog/bookinstance/create 200 345.895 ms - -
+GET /stylesheets/style.css 304 1.559 ms - -
+GET /catalog 200 340.336 ms - -
+GET /stylesheets/style.css 304 0.770 ms - -
+GET /catalog/genres 304 231.285 ms - -
+GET /stylesheets/style.css 304 0.691 ms - -
+GET /catalog/genre/5ffbfbdc27926c31cc15fed0 200 215.928 ms - -
+GET /stylesheets/style.css 304 0.721 ms - -
+GET /catalog/book/60021ff5bc1e0904a4b4aaf3 200 378.578 ms - -
+GET /stylesheets/style.css 304 0.807 ms - -
+GET /catalog/book/60021ff5bc1e0904a4b4aaf3/update 200 394.858 ms - -
+GET /stylesheets/style.css 304 0.865 ms - -
+GET /catalog/genres 304 191.425 ms - -
+GET /stylesheets/style.css 304 0.830 ms - -
+GET /catalog/genre/5fdeb203255e052314ca38ba 200 181.220 ms - -
+GET /stylesheets/style.css 304 0.698 ms - -
+GET /catalog/genre/5fdeb203255e052314ca38ba/update 200 181.259 ms - -
+GET /stylesheets/style.css 304 1.165 ms - -
+(node:107554) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/deprecations.html#findandmodify
+POST /catalog/genre/5fdeb203255e052314ca38ba/update 302 177.871 ms - 122
+GET /catalog/genre/5fdeb203255e052314ca38ba 200 197.244 ms - -
+GET /stylesheets/style.css 304 1.567 ms - -
+GET /catalog/books 304 524.122 ms - -
+GET /stylesheets/style.css 304 1.440 ms - -
+GET /catalog/genres 200 193.733 ms - -
+GET /stylesheets/style.css 304 0.746 ms - -
+GET /catalog/genre/5fdeb203255e052314ca38ba 304 191.308 ms - -
+GET /stylesheets/style.css 304 0.614 ms - -
+GET /catalog/book/60021ff5bc1e0904a4b4aaf3 200 337.500 ms - -
+GET /stylesheets/style.css 304 0.961 ms - -
+^C
+manoel@worknote:~/Desktop/estudos/JavaScript/Express/mdn/express-locallibrary-tutorial$ 
+
